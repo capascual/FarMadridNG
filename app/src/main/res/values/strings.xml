@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">FarMadrid</string>
+    <string name="action_settings">Opciones</string>
+    <string name="action_search">Buscar</string>
+    <string name="drawer_open">Abrir</string>
+    <string name="drawer_close">Cerrar</string>
+
+    <string name="nav_item_map">Mapa</string>
+    <string name="nav_item_distance">Por distancia</string>
+    <string name="nav_item_district">Por distrito</string>
+    <string name="nav_item_city">Por municipio</string>
+    <string name="nav_item_favorite">Favoritas</string>
+
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_map</item>
+        <item>@string/nav_item_distance</item>
+        <item>@string/nav_item_district</item>
+        <item>@string/nav_item_city</item>
+        <item>@string/nav_item_favorite</item>
+
+    </string-array>
+
+    <string name="title_favorite">Favoritas</string>
+    <string name="title_city">Por ciudad</string>
+    <string name="title_district">Por distrito</string>
+    <string name="title_distance">Por distancia</string>
+    <string name="title_map">Mapa</string>
+</resources>
