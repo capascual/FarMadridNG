@@ -33,7 +33,11 @@ public class DistanceFragment extends Fragment {
     View mMainView;
     ArrayList<Pharmacy> mResult;
     URLFetchTask mTask;
+
     View rootView;
+    RecyclerView rv;
+    RVAdapter adapter;
+
     String url = "http://www.cofm.es/index.asp?MP=Informacion-Corporativa&MS=Buscador-Farmacias&MN=0&accion=si&lanzamiento=buscador&buscar_direccion=1&fDireccion=calle+valdemorillo&fNumero=1&fMunicipio=GETAFE&fFecha=14/09/2015&fHora=20:34&fRadio=5&fGuardia=0";
 
     public DistanceFragment() {
@@ -50,6 +54,12 @@ public class DistanceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_distance, container, false);
+
+        rv = (RecyclerView)rootView.findViewById(R.id.rv);
+        rv.setHasFixedSize(true);
+
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        rv.setLayoutManager(llm);
 
         // HTTP Get Request
         startURLFetch(url);
@@ -81,7 +91,7 @@ public class DistanceFragment extends Fragment {
     }
 
     public void showProgressBar() {
-        RecyclerView rv = (RecyclerView)rootView.findViewById(R.id.rv);
+        rv = (RecyclerView)rootView.findViewById(R.id.rv);
         rv.setVisibility(View.GONE);
         //ListView listView = (ListView)rootView.findViewById(R.id.list);
         //listView.setVisibility(View.VISIBLE);
@@ -91,7 +101,7 @@ public class DistanceFragment extends Fragment {
     }
 
     public void hideProgressBar() {
-        RecyclerView rv = (RecyclerView)getActivity().findViewById(R.id.rv);
+        rv = (RecyclerView)getActivity().findViewById(R.id.rv);
         rv.setVisibility(View.VISIBLE);
         //ListView listVIew = (ListView)getActivity().findViewById(R.id.list);
         //listVIew.setVisibility(View.VISIBLE);
@@ -100,18 +110,12 @@ public class DistanceFragment extends Fragment {
     }
 
     public void populateResult(ArrayList<Pharmacy> listPharmacy) {
-        String[] values = new String[10];
+        //String[] values = new String[10];
 
-        for(int i = 0; i < listPharmacy.size(); i++)
-            values[i] = listPharmacy.get(i).getAddress();
+        //for(int i = 0; i < listPharmacy.size(); i++)
+        //    values[i] = listPharmacy.get(i).getAddress();
 
-        RecyclerView rv = (RecyclerView)getActivity().findViewById(R.id.rv);
-        rv.setHasFixedSize(true);
-
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        rv.setLayoutManager(llm);
-
-        RVAdapter adapter = new RVAdapter(listPharmacy);
+        adapter = new RVAdapter(listPharmacy);
         rv.setAdapter(adapter);
 
         //ListView listView = (ListView)getActivity().findViewById(R.id.list);
@@ -140,6 +144,7 @@ public class DistanceFragment extends Fragment {
 
     @Override
     public void onDetach() {
+
         super.onDetach();
     }
 }

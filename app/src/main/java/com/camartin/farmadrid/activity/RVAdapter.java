@@ -24,12 +24,12 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
         TextView city;
         ImageView icon;
 
-        PersonViewHolder(View itemView) {
-            super(itemView);
-            cv = (CardView)itemView.findViewById(R.id.cv);
-            address = (TextView)itemView.findViewById(R.id.address);
-            city = (TextView)itemView.findViewById(R.id.city);
-            icon = (ImageView)itemView.findViewById(R.id.icon);
+        PersonViewHolder(View rootView) {
+            super(rootView);
+            cv = (CardView)rootView.findViewById(R.id.cv);
+            address = (TextView)rootView.findViewById(R.id.address);
+            city = (TextView)rootView.findViewById(R.id.city);
+            icon = (ImageView)rootView.findViewById(R.id.icon);
         }
     }
 
@@ -46,15 +46,15 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
 
     @Override
     public PersonViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_distance, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.rowlayout, viewGroup, false);
         PersonViewHolder pvh = new PersonViewHolder(v);
         return pvh;
     }
 
     @Override
     public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
-        personViewHolder.address.setText("Address");
-        personViewHolder.city.setText("City");
+        personViewHolder.address.setText(listPharmacy.get(i).getAddress());
+        personViewHolder.city.setText(listPharmacy.get(i).getCity());
         //personViewHolder.icon.setImageResource(listPharmacy.get(i).photoId);
         personViewHolder.icon.setImageResource(R.mipmap.ic_launcher);
 
@@ -64,6 +64,5 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
-
 }
 
