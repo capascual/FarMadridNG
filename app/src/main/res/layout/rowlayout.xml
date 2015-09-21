@@ -4,7 +4,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cv"
-        >
+        android:layout_marginTop="-2dip"
+        android:layout_marginBottom="-2dip"
+        style="@style/CardView.MyBlue"
+    >
 
         <RelativeLayout
             android:layout_width="match_parent"

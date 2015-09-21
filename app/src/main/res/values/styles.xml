@@ -12,4 +12,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Theme an individual view: -->
+    <style name="CardView.MyBlue">
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
 </resources>

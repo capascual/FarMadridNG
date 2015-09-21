@@ -61,6 +61,8 @@ public class DistanceFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rv.setLayoutManager(llm);
 
+        // Get current position
+
         // HTTP Get Request
         startURLFetch(url);
 
@@ -110,21 +112,10 @@ public class DistanceFragment extends Fragment {
     }
 
     public void populateResult(ArrayList<Pharmacy> listPharmacy) {
-        //String[] values = new String[10];
-
-        //for(int i = 0; i < listPharmacy.size(); i++)
-        //    values[i] = listPharmacy.get(i).getAddress();
 
         adapter = new RVAdapter(listPharmacy);
         rv.setAdapter(adapter);
 
-        //ListView listView = (ListView)getActivity().findViewById(R.id.list);
-        //MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this.getActivity(), values);
-
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-        //        android.R.layout.simple_list_item_1, values);
-
-        //listView.setAdapter(adapter);
     }
 
     protected boolean isTaskRunning(URLFetchTask task) {
