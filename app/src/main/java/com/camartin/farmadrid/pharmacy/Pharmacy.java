@@ -23,7 +23,6 @@ public class Pharmacy {
     /*
     get and set methods
      */
-
     public String getAddress() {
         return address;
     }
