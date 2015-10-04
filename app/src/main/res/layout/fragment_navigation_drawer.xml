@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_alignParentTop="true"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        >
 
         <ImageView
             android:layout_width="70dp"
@@ -31,6 +32,18 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <Spinner
+            android:id="@+id/searchMode"
+            android:layout_width="match_parent"
+            style="@android:style/Widget.Spinner.DropDown"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:background="#33FF0000"
+            android:textColor="#FFFFFF"/>
+        />
+
     </RelativeLayout>
 
 
@@ -39,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/nav_header_container"
+        android:background="@drawable/list_selector"
         android:layout_marginTop="15dp" />
-
 
 </RelativeLayout>

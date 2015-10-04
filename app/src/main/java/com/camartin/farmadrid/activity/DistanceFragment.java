@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by camartin on 14/09/15.
+ * Created by Carlos Martín-Engeños on 14/09/15.
  */
 
 public class DistanceFragment extends Fragment implements ConnectionCallbacks,
@@ -74,7 +74,6 @@ public class DistanceFragment extends Fragment implements ConnectionCallbacks,
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -82,7 +81,7 @@ public class DistanceFragment extends Fragment implements ConnectionCallbacks,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_distance, container, false);
 
-        RecyclerView rv = (RecyclerView)rootView.findViewById(R.id.rv);
+        rv = (RecyclerView)rootView.findViewById(R.id.rv);
         rv.setHasFixedSize(true);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
@@ -143,7 +142,7 @@ public class DistanceFragment extends Fragment implements ConnectionCallbacks,
                 Toast.makeText(getActivity(), "Address: " + address +", number: " + number, Toast.LENGTH_LONG).show();
 
                 // Construct URL object
-                url = new URL("Calle+Valdemorillo", "Getafe", 1, false, "14/09/2015", "20:35", 5);
+                url = new URL("Calle+Valdemorillo", "Getafe", 1, FragmentDrawer.spinner.getSelectedItem().toString(), "14/09/2015", "20:35", 5);
 
                 // HTTP Get Request
                 startURLFetch(url.getURL());
@@ -249,7 +248,7 @@ public class DistanceFragment extends Fragment implements ConnectionCallbacks,
      * Task methods
      */
     protected void startURLFetch(String urlS) {
-        mTask = new URLFetchTask(this);
+        mTask = new URLFetchTask(this, URLFetchTask.FragmentType.DISTANCE);
         mTask.execute(urlS);
     }
 

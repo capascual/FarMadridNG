@@ -1,24 +1,36 @@
 package com.camartin.farmadrid.activity;
 
+import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.camartin.farmadrid.R;
 import com.camartin.farmadrid.pharmacy.Pharmacy;
 
 import java.util.ArrayList;
 
 /**
- * Created by carlos on 20/9/15.
+ * Created by Carlos Martín-Engeños on 20/9/15.
  */
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
 
-    public static class PersonViewHolder extends RecyclerView.ViewHolder {
+    // Pharmacy list
+    ArrayList<Pharmacy> listPharmacy;
+
+    // TAG
+    private static final String TAG = RVAdapter.class.getSimpleName();
+
+    public static class PersonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         CardView cv;
         TextView address;
         TextView city;
@@ -30,10 +42,15 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
             address = (TextView)rootView.findViewById(R.id.address);
             city = (TextView)rootView.findViewById(R.id.city);
             icon = (ImageView)rootView.findViewById(R.id.icon);
+            rootView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Log.e(TAG, "onClick " + getPosition());
+
         }
     }
-
-    ArrayList<Pharmacy> listPharmacy;
 
     RVAdapter(ArrayList<Pharmacy> listPharmacy){
         this.listPharmacy = listPharmacy;
@@ -55,9 +72,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
     public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
         personViewHolder.address.setText(listPharmacy.get(i).getAddress());
         personViewHolder.city.setText(listPharmacy.get(i).getCity());
-        //personViewHolder.icon.setImageResource(listPharmacy.get(i).photoId);
         personViewHolder.icon.setImageResource(R.mipmap.ic_launcher);
-
     }
 
     @Override

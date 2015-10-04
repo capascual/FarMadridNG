@@ -14,12 +14,11 @@ import java.net.MalformedURLException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by carlos on 17/9/15.
+ * Created by Carlos Martín-Engeños on 17/9/15.
  */
 
 // Runs a long running task in a thread
@@ -27,12 +26,41 @@ import java.util.regex.Pattern;
 // Also all UI activities are delegated to the fragment passed in constructor
 public class URLFetchTask extends AsyncTask<String, Void, ArrayList<Pharmacy>>{
 
+    // TAG
     private static final String TAG = "URLFecthTask";
+
+    // Size elements to be downloaded
     private static final int SIZE = 10;
 
-    DistanceFragment container;
-    public URLFetchTask(DistanceFragment f) {
-        this.container = f;
+    // Fragment type
+    public enum FragmentType {DISTRICT, DISTANCE, CITY}
+
+    DistanceFragment containerDistance;
+    DistrictFragment containerDistrict;
+    CityFragment containerCity;
+
+    FragmentType ftype;
+
+    public FragmentType getFtype() {
+        return ftype;
+    }
+
+    // For fragment distance
+    public URLFetchTask(DistanceFragment f, FragmentType fragType) {
+        this.containerDistance = f;
+        this.ftype = fragType;
+    }
+
+    // For fragment district
+    public URLFetchTask(DistrictFragment f, FragmentType fragType) {
+        this.containerDistrict = f;
+        this.ftype = fragType;
+    }
+
+    // For fragment city
+    public URLFetchTask(CityFragment f, FragmentType fragType) {
+        this.containerCity = f;
+        this.ftype = fragType;
     }
 
     @Override
@@ -41,7 +69,7 @@ public class URLFetchTask extends AsyncTask<String, Void, ArrayList<Pharmacy>>{
         String body = "";
 
         try {
-            Log.v(TAG, "Requesting...");
+            Log.v(TAG, "Requesting url: " + params[0]);
             URL url = new URL(params[0]);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             if(urlConnection.getResponseCode() == 200){//Vemos si es 200 OK y leemos el cuerpo del mensaje.
@@ -62,20 +90,56 @@ public class URLFetchTask extends AsyncTask<String, Void, ArrayList<Pharmacy>>{
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        container.showProgressBar();
+        switch(getFtype()){
+            case DISTANCE:
+                containerDistance.showProgressBar();
+                break;
+            case DISTRICT:
+                containerDistrict.showProgressBar();
+                break;
+            case CITY:
+                containerCity.showProgressBar();
+                break;
+        }
     }
 
     @Override
     protected void onPostExecute(ArrayList<Pharmacy> listPharmacy) {
         super.onPostExecute(listPharmacy);
-        // The activity can be null if it is thrown out by Android while task is running!
-        if(container!=null && container.getActivity()!=null) {
-            for(int i = 0; i < listPharmacy.size(); i++) {
-                Log.v(TAG, "address(" + i + "): " + listPharmacy.get(i).getAddress());
-            }
-            container.populateResult(listPharmacy);
-            container.hideProgressBar();
-            this.container = null;
+        switch(getFtype()){
+            case DISTANCE:
+                // The activity can be null if it is thrown out by Android while task is running!
+                if(containerDistance!=null && containerDistance.getActivity()!=null) {
+                    for(int i = 0; i < listPharmacy.size(); i++) {
+                        Log.v(TAG, "address(" + i + "): " + listPharmacy.get(i).getAddress());
+                    }
+                    containerDistance.populateResult(listPharmacy);
+                    containerDistance.hideProgressBar();
+                    this.containerDistance = null;
+                }
+                break;
+            case DISTRICT:
+                // The activity can be null if it is thrown out by Android while task is running!
+                if(containerDistrict!=null && containerDistrict.getActivity()!=null) {
+                    for(int i = 0; i < listPharmacy.size(); i++) {
+                        Log.v(TAG, "address(" + i + "): " + listPharmacy.get(i).getAddress());
+                    }
+                    containerDistrict.populateResult(listPharmacy);
+                    containerDistrict.hideProgressBar();
+                    this.containerDistrict = null;
+                }
+                break;
+            case CITY:
+                // The activity can be null if it is thrown out by Android while task is running!
+                if(containerCity!=null && containerCity.getActivity()!=null) {
+                    for(int i = 0; i < listPharmacy.size(); i++) {
+                        Log.v(TAG, "address(" + i + "): " + listPharmacy.get(i).getAddress());
+                    }
+                    containerCity.populateResult(listPharmacy);
+                    containerCity.hideProgressBar();
+                    this.containerCity = null;
+                }
+                break;
         }
     }
 
@@ -165,7 +229,7 @@ public class URLFetchTask extends AsyncTask<String, Void, ArrayList<Pharmacy>>{
         }
         Log.v(TAG, "Done!");
 
-        for(int i = 0; i < SIZE; i++){
+        for(int i = 0; i < count2; i++){
             Log.v(TAG, "i: " + i);
             Log.v(TAG, "address: " + addresses[i]);
             Log.v(TAG, "city: " + cities[i]);
@@ -174,7 +238,7 @@ public class URLFetchTask extends AsyncTask<String, Void, ArrayList<Pharmacy>>{
             Log.v(TAG, "longitude: " + longitudes[i]);
         }
 
-        for(int i = 0; i < SIZE; i++)
+        for(int i = 0; i < count2; i++)
             listPharmacy.add(new Pharmacy(addresses[i], zips[i], cities[i], latitudes[i], longitudes[i]));
 
         return listPharmacy;

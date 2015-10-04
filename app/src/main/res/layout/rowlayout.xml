@@ -6,14 +6,16 @@
         android:id="@+id/cv"
         android:layout_marginTop="-2dip"
         android:layout_marginBottom="-2dip"
-        style="@style/CardView.MyBlue"
+        style="@style/CardView.MyPharmacy"
     >
 
         <RelativeLayout
+            android:id="@+id/rlPharmacy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            >
+            android:background="@drawable/list_selector">
+        >
 
             <ImageView
                 android:layout_width="wrap_content"

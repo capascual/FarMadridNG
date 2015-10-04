@@ -1,10 +1,11 @@
 package com.camartin.farmadrid.activity;
 
 /**
- * Created by Ravi on 29/07/15.
+ * Created by Carlos Martín-Engeños on 29/07/15.
  */
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -12,11 +13,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +40,10 @@ public class FragmentDrawer extends Fragment {
     private NavigationDrawerAdapter adapter;
     private View containerView;
     private static String[] titles = null;
+    private static String[] icons = null;
     private FragmentDrawerListener drawerListener;
+
+    public static Spinner spinner;
 
     public FragmentDrawer() {
 
@@ -48,11 +56,31 @@ public class FragmentDrawer extends Fragment {
     public static List<NavDrawerItem> getData() {
         List<NavDrawerItem> data = new ArrayList<>();
 
-
         // preparing navigation drawer items
         for (int i = 0; i < titles.length; i++) {
             NavDrawerItem navItem = new NavDrawerItem();
             navItem.setTitle(titles[i]);
+
+            switch(titles[i]){
+                case "Mapa":
+                    navItem.setIconMenu(R.drawable.ic_action_map);
+                    break;
+                case "Por distancia":
+                    navItem.setIconMenu(R.drawable.ic_action_directions);
+                    break;
+                case "Por distrito":
+                    navItem.setIconMenu(R.drawable.ic_action_domain);
+                    break;
+                case "Por municipio":
+                    navItem.setIconMenu(R.drawable.ic_action_location_city);
+                    break;
+                case "Favoritas":
+                    navItem.setIconMenu(R.drawable.ic_action_star);
+                    break;
+                default:
+                    navItem.setIconMenu(R.drawable.ic_action_grade);
+                    break;
+            }
             data.add(navItem);
         }
         return data;
@@ -71,16 +99,26 @@ public class FragmentDrawer extends Fragment {
                              Bundle savedInstanceState) {
         // Inflating view layout
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
+
+        // Spinner - search modes
+        spinner = (Spinner) layout.findViewById(R.id.searchMode);
+        ArrayAdapter<CharSequence> adapterSpinner = ArrayAdapter.createFromResource(getActivity(),
+                R.array.search_mode_array, android.R.layout.simple_spinner_item);
+        adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapterSpinner);
 
         adapter = new NavigationDrawerAdapter(getActivity(), getData());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), recyclerView, new ClickListener() {
+
             @Override
             public void onClick(View view, int position) {
                 drawerListener.onDrawerItemSelected(view, position);
                 mDrawerLayout.closeDrawer(containerView);
+                Log.e(TAG, "onClick, position: " +  position);
             }
 
             @Override
@@ -173,8 +211,6 @@ public class FragmentDrawer extends Fragment {
         public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
 
         }
-
-
     }
 
     public interface FragmentDrawerListener {

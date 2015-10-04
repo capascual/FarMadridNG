@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities_array">
+        <item>AJALVIR</item>
+        <item>ALAMEDA DEL VALLE</item>
+        <item>ALAMO, EL</item>
+        <item>ALCALA DE HENARES</item>
+        <item>ALCOBENDAS</item>
+        <item>ALCORCON</item>
+        <item>ALDEA DEL FRESNO</item>
+        <item>ALGETE</item>
+        <item>ALPEDRETE</item>
+        <item>AMBITE</item>
+        <item>ANCHUELO</item>
+        <item>ARANJUEZ</item>
+        <item>ARGANDA DEL REY</item>
+        <item>ARROYOMOLINOS</item>
+        <item>BATRES</item>
+        <item>BECERRIL DE LA SIERRA</item>
+        <item>BELMONTE DE TAJO</item>
+        <item>BERRUECO, EL</item>
+        <item>BOADILLA DEL MONTE</item>
+        <item>BRAOJOS</item>
+        <item>BREA DE TAJO</item>
+        <item>BRUNETE</item>
+        <item>BUITRAGO DE LOZOYA</item>
+        <item>BUSTARVIEJO</item>
+        <item>CABANILLAS DE LA SIERRA</item>
+        <item>CABRERA, LA</item>
+        <item>CADALSO DE LOS VIDRIOS</item>
+        <item>CAMARMA DE ESTERUELAS</item>
+        <item>CAMPO REAL</item>
+        <item>CANENCIA</item>
+        <item>CARABAÑA</item>
+        <item>CASARRUBUELOS</item>
+        <item>CENICIENTOS</item>
+        <item>CERCEDA-BOALO, EL</item>
+        <item>CERCEDILLA</item>
+        <item>CHAPINERIA</item>
+        <item>CHINCHON</item>
+        <item>CIEMPOZUELOS</item>
+        <item>COBEÑA</item>
+        <item>COLLADO MEDIANO</item>
+        <item>COLLADO VILLALBA</item>
+        <item>COLMENAR DE OREJA</item>
+        <item>COLMENAR DEL ARROYO</item>
+        <item>COLMENAR VIEJO</item>
+        <item>COLMENAREJO</item>
+        <item>CORPAS</item>
+        <item>COSLADA</item>
+        <item>CUBAS</item>
+        <item>DAGANZO DE ARRIBA</item>
+        <item>ESCORIAL, EL</item>
+        <item>ESTREMERA</item>
+        <item>FRESNEDILLAS DE LA OLIVA</item>
+        <item>TOROTE</item>
+        <item>FRESNO DE TOROTE</item>
+        <item>FUENLABRADA</item>
+        <item>FUENTE EL SAZ DE JARAMA</item>
+        <item>FUENTIDUEÑA DE TAJO</item>
+        <item>GALAPAGAR</item>
+        <item>GARGANTA DE LOS MONTES</item>
+        <item>GARGANTILLA DEL LOZOYA</item>
+        <item>GETAFE</item>
+        <item>GRIÑON</item>
+        <item>GUADALIX DE LA SIERRA</item>
+        <item>GUADARRAMA</item>
+        <item>HOYO DE MANZANARES</item>
+        <item>HUMANES</item>
+        <item>LEGANES</item>
+        <item>LOECHES</item>
+        <item>LOZOYA DEL VALLE</item>
+        <item>LOZOYUELA-NAVAS-SIETEIGLESIAS</item>
+        <item>MAJADAHONDA</item>
+        <item>MANZANARES EL REAL</item>
+        <item>MECO</item>
+        <item>MEJORADA DEL CAMPO</item>
+        <item>MIRAFLORES DE LA SIERRA</item>
+        <item>MOLAR, EL</item>
+        <item>MOLINOS, LOS</item>
+        <item>MONTEJO DE LA SIERRA</item>
+        <item>MORALEJA DE ENMEDIO</item>
+        <item>MORALZARZAL</item>
+        <item>MORATA DE TAJUÑA</item>
+        <item>MOSTOLES</item>
+        <item>NAVACERRADA</item>
+        <item>NAVALAFUENTE</item>
+        <item>NAVALAGAMELLA</item>
+        <item>NAVALCARNERO</item>
+        <item>NAVAS DEL REY</item>
+        <item>NUEVO BAZTAN</item>
+        <item>OLMEDA DE LAS FUENTES</item>
+        <item>ORUSCO</item>
+        <item>PARACUELLOS DEL JARAMA</item>
+        <item>PARLA</item>
+        <item>PATONES</item>
+        <item>PEDREZUELA</item>
+        <item>PELAYOS DE LA PRESA</item>
+        <item>PERALES DE TAJUÑA</item>
+        <item>PEZUELA DE LAS TORRES</item>
+        <item>PINILLA DEL VALLE</item>
+        <item>PINTO</item>
+        <item>PIÑUECAR</item>
+        <item>POZUELO DE ALARCON</item>
+        <item>POZUELO DEL REY</item>
+        <item>PUENTES VIEJAS (MANJIRON, PAREDES Y SER)</item>
+        <item>QUIJORNA</item>
+        <item>RASCAFRIA-OTERUELO</item>
+        <item>REDUEÑA</item>
+        <item>RIBATEJADA</item>
+        <item>RIVAS VACIAMADRID</item>
+        <item>ROBLEDO DE CHAVELA</item>
+        <item>ROZAS DE MADRID, LAS</item>
+        <item>ROZAS DE PUERTO REAL</item>
+        <item>SAN AGUSTIN DE GUADALIX</item>
+        <item>SAN FERNANDO DE HENARES</item>
+        <item>SAN LORENZO DE EL ESCORIAL</item>
+        <item>SAN MARTIN DE LA VEGA</item>
+        <item>SAN MARTIN DE VALDEIGLESIAS</item>
+        <item>SAN SEBASTIAN DE LOS REYES</item>
+        <item>SANTA MARIA DE LA ALAMEDA</item>
+        <item>SANTORCAZ</item>
+        <item>SANTOS DE LA HUMOSA, LOS</item>
+        <item>SERRANILLOS DEL VALLE</item>
+        <item>SEVILLA LA NUEVA</item>
+        <item>SOTO DEL REAL</item>
+        <item>TALAMANCA DE JARAMA</item>
+        <item>TIELMES</item>
+        <item>TITULCIA</item>
+        <item>TORREJON DE ARDOZ</item>
+        <item>TORREJON DE LA CALZADA</item>
+        <item>TORREJON DE VELASCO</item>
+        <item>TORRELAGUNA</item>
+        <item>TORRELODONES</item>
+        <item>TORREMOCHA DE JARAMA</item>
+        <item>TORRES DE LA ALAMEDA</item>
+        <item>TRES CANTOS</item>
+        <item>VALDEAVERO</item>
+        <item>VALDELAGUNA</item>
+        <item>VALDEMANCO</item>
+        <item>VALDEMAQUEDA</item>
+        <item>VALDEMORILLO</item>
+        <item>VALDEMORO</item>
+        <item>VALDEOLMOS-ALALPARDO</item>
+        <item>VALDEPIELAGOS</item>
+        <item>VALDERACETE</item>
+        <item>VALDETORRES DE JARAMA</item>
+        <item>VALDILECHA</item>
+        <item>VALVERDE DE ALCALA</item>
+        <item>VELILLA DE SAN ANTONIO</item>
+        <item>VELLON, EL</item>
+        <item>VENTURADA</item>
+        <item>VILLA DEL PRADO</item>
+        <item>VILLACONEJOS</item>
+        <item>VILLALBILLA</item>
+        <item>VILLAMANRIQUE DE TAJO</item>
+        <item>VILLAMANTA</item>
+        <item>VILLAMANTILLA</item>
+        <item>VILLANUEVA DE LA CAÑADA</item>
+        <item>VILLANUEVA DE PERALES</item>
+        <item>VILLANUEVA DEL PARDILLO</item>
+        <item>VILLAR DEL OLMO</item>
+        <item>VILLAREJO DE SALVANES</item>
+        <item>VILLAVICIOSA DE ODON</item>
+        <item>VILLAVIEJA DEL LOZOYA</item>
+        <item>ZARZALEJO </item>
+    </string-array>
+</resources>

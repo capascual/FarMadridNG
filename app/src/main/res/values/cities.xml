@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="districts_array">
+        <item>ARAVACA</item>
+        <item>BARAJAS-ALAMEDA DE OSUNA</item>
+        <item>CARABANCHEL-LATINA</item>
+        <item>CENTRO</item>
+        <item>CHAMARTIN-HORTALEZAr</item>
+        <item>CHAMBERI-MONCLOA</item>
+        <item>CIUDAD LINEAL-SAN BLAS</item>
+        <item>FUENCARRAL-BARRIO DEL PILAR</item>
+        <item>MORATALAZ</item>
+        <item>PUEBLO DE VALLECAS</item>
+        <item>PUENTE DE VALLECAS-ENTREVIAS</item>
+        <item>RETIRO-ARGANZUELA</item>
+        <item>SALAMANCA-VENTAS</item>
+        <item>TETUAN-CUATRO CAMINOS</item>
+        <item>USERA-VILLAVERDE</item>
+        <item>VICALVARO</item>
+    </string-array>
+</resources>

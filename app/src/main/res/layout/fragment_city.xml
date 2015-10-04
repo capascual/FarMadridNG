@@ -1,30 +1,54 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.camartin.farmadrid.activity.CityFragment">
 
-
     <TextView
-        android:id="@+id/label"
+        android:id="@+id/titleCity"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textSize="45dp"
-        android:text="CIUDAD"
-        android:textStyle="bold"/>
+        android:textSize="20sp"
+        android:text="Elija una ciudad:"
+        android:textStyle="bold"
+        />
 
-    <TextView
-        android:layout_below="@id/label"
-        android:layout_centerInParent="true"
-        android:layout_width="fill_parent"
+    <Spinner
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/list_cities"
+        android:layout_alignParentTop="true"
+        android:layout_below="@id/titleCity"
         android:gravity="center_horizontal"
-        android:text="Edit fragment_city.xml to change the appearance" />
+        android:textSize="12sp"
+        />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/search_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar farmacias"
+        android:layout_below="@+id/list_cities"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv_cities">
+    </android.support.v7.widget.RecyclerView>
+
+    <ProgressBar
+        android:id="@+id/progressBarCity"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:indeterminate="true" />
+
+</LinearLayout>

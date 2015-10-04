@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         displayView(0);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -76,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     private void displayView(int position) {
         Fragment fragment = null;
         String title = getString(R.string.app_name);
+        int icon = R.mipmap.ic_launcher;
+
         switch (position) {
             case 0:
                 fragment = new MapsFragment();
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
             // set the toolbar title
             getSupportActionBar().setTitle(title);
+
         }
     }
 }

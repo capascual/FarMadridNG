@@ -6,15 +6,16 @@ package com.camartin.farmadrid.model;
 public class NavDrawerItem {
     private boolean showNotify;
     private String title;
-
+    private int iconMenu;
 
     public NavDrawerItem() {
 
     }
 
-    public NavDrawerItem(boolean showNotify, String title) {
+    public NavDrawerItem(boolean showNotify, String title, int iconMenu) {
         this.showNotify = showNotify;
         this.title = title;
+        this.iconMenu = iconMenu;
     }
 
     public boolean isShowNotify() {
@@ -31,5 +32,13 @@ public class NavDrawerItem {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getIconMenu() {
+        return iconMenu;
+    }
+
+    public void setIconMenu(int iconMenu) {
+        this.iconMenu = iconMenu;
     }
 }

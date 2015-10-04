@@ -13,7 +13,7 @@
     </style>
 
     <!-- Theme an individual view: -->
-    <style name="CardView.MyBlue">
+    <style name="CardView.MyPharmacy">
         <item name="cardCornerRadius">4dp</item>
         <item name="cardUseCompatPadding">true</item>
     </style>

@@ -11,6 +11,12 @@
     <string name="nav_item_city">Por municipio</string>
     <string name="nav_item_favorite">Favoritas</string>
 
+    <string name="nav_item_map_icon">"R.drawable.ic_action_map"</string>
+    <string name="nav_item_distance_icon">"R.drawable.ic_action_directions"</string>
+    <string name="nav_item_district_icon">"R.drawable.ic_action_domain"</string>
+    <string name="nav_item_city_icon">"R.drawable.ic_action_location_city"</string>
+    <string name="nav_item_favorite_icon">"R.drawable.ic_action_grade"</string>
+
 
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
@@ -19,7 +25,15 @@
         <item>@string/nav_item_district</item>
         <item>@string/nav_item_city</item>
         <item>@string/nav_item_favorite</item>
+    </string-array>
 
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_icons">
+        <item>@string/nav_item_map_icon</item>
+        <item>@string/nav_item_distance_icon</item>
+        <item>@string/nav_item_district_icon</item>
+        <item>@string/nav_item_city_icon</item>
+        <item>@string/nav_item_favorite_icon</item>
     </string-array>
 
     <string name="title_favorite">Favoritas</string>
@@ -27,4 +41,5 @@
     <string name="title_district">Por distrito</string>
     <string name="title_distance">Por distancia</string>
     <string name="title_map">Mapa</string>
+
 </resources>
